@@ -1,0 +1,113 @@
+\documentclass[a4paper,twoside,11pt]{article}
+\usepackage{a4wide,graphicx,fancyhdr,clrscode,tabularx,amsmath,amssymb,color,enumitem}
+\usepackage{algo}
+
+%----------------------- Macros and Definitions --------------------------
+
+\setlength\headheight{20pt}
+\addtolength\topmargin{-10pt}
+\addtolength\footskip{20pt}
+
+\fancypagestyle{plain}{%
+\fancyhf{}
+\fancyhead[LO,RE]{\sffamily technische universiteit eindhoven}
+\fancyhead[RO,LE]{\sffamily JBI020 Foundations of Computing}
+\fancyfoot[LO,RE]{\sffamily /department of computer science}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\sffamily JBI020 Foundations of Computing}
+\fancyhead[LO,RE]{\sffamily technische universiteit eindhoven}
+\fancyfoot[LO,RE]{\sffamily /department of computer science}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+
+\begin{document}
+
+\title{\vspace{-2\baselineskip} 
+Assignment 1
+}
+\author{Some One \qquad Student number: 123456 \\{\tt s.one@student.tue.nl}}
+
+
+\maketitle
+
+
+Note: This is by no means a full and complete introduction to latex (or maybe not an introduction at all). Its purpose is to mostly introduce some of the symbols and notation used throughout the course, if you already know some of the basics.
+
+\subsection*{Exercise 1}
+
+\paragraph{(a)} 
+My solution to this exercise is a bunch of \textbf{logical symbols}:
+$\vee \wedge \Rightarrow \Leftrightarrow \neg \equiv \not\equiv \therefore$\\
+And some more: $\exists_x \forall_y$
+
+\paragraph{(b)}
+Can't forget the \emph{set operations} and so forth:
+\[ \cap \cup \setminus {}^\text{c} \mathcal{P} \mathcal{U} \in \not\in \subseteq \not\subseteq \emptyset \]
+
+\paragraph{(c)}
+Some basic mathematical notation
+\[ \R \N \Z \Q < > \leq \geq \neq x^2 \sqrt{y} \]
+
+\paragraph{(d)}
+
+Here's a math table-like environment for setting up a series of derivations.
+\begin{eqnarray*}
+  && T \\
+  &\equiv& \{ \text{rule to be proven } \Rightarrow \} \\
+  && ? \\
+  &\equiv& \{ \text{rule to be proven } \wedge \} \\
+  && F 
+\end{eqnarray*}
+
+But if you don't want to use (a lot of) math inside a table, a normal table also works:\\
+\begin{tabular}{lcr}
+left & center & right \\
+\hline
+l & c & r \\
+$x+y$ & $\equiv$ & $y + x$ \\
+\end{tabular}
+
+\begin{tabular}{rl}
+& $a \wedge b$ \\
+& $q$ \\
+\hline
+$\therefore$ & x 
+\end{tabular}
+
+\subsection*{Exercise 2}
+
+\paragraph{(a)} Regular expressions: $(a + \varepsilon)^* (a+b) ab$
+\paragraph{(a)} Useful for writing about Turing machines: $\square$
+
+\subsection*{Exercise 3}
+
+For specifying algorithms:
+
+\begin{algorithm}{\sc MyIncredibleAlgorithm}[A,v]{
+    \qinput an array $A$ of $n$ numbers and a number $v$
+    \qoutput an index $i$ such that $A[i] = 42$, or \textsc{NotFound} if no such index exists}
+    $i$ \qlet $1$ \\
+    \qwhile $i \leq n$ and $A[i] \neq 42$ \\
+     \qdo $i$ \qlet $i + v^2$ \qend \\
+    \qif $i > n$ \\
+    \qthen \qreturn \textsc{NotFound}\\
+    \qelse \qreturn $i$ \qfi\\
+    \qfor $i$ \qlet 1 to $n$ \\
+    \qdo Something useful \qend
+\end{algorithm}
+
+For analysis, you may want to know $O, \Theta, \Omega(n \log n)$ (not to be confused with $o, \omega$).
+
+\end{document}
