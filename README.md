@@ -1,1 +1,1 @@
-# Latex_Template
+# MPC Programming Exercise
